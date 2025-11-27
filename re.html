@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl Cobarrubia - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #d6336c;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-button:hover {
+            background-color: #b02a57;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            background: #fff0f0;
+            margin: 80px auto 40px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d6336c;
+            margin-left: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #000000;
+        }
+
+        header p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: #d6336c;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            border-bottom: 2px solid #ffd6e0;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .contact a {
+            color: #d6336c;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .personal-info {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .personal-info td {
+            padding: 6px 10px;
+        }
+
+        .personal-info td:first-child {
+            font-weight: bold;
+            width: 200px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-pic {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔙 Back Button -->
+    <a class="back-button" href="javascript:history.back()">← Back</a>
+
+    <div class="resume-container">
+        <header>
+            <div class="header-text">
+                <h1>Carl Cobarrubia</h1>
+                <p class="contact">
+                    📞 (123) 456-7890 | ✉️ 
+                    <a href="mailto:carl.cobarrubia@email.com">carl.cobarrubia@email.com</a> 
+                    | 🌐 www.carlcobarrubia.com
+                </p>
+            </div>
+
+            <img src="file:///C:/Users/202350259/Downloads/carlito1x1.jpg" alt="Profile Photo" class="profile-pic">
+        </header>
+
+        <section>
+            <h2>Personal Information</h2>
+            <table class="personal-info">
+                <tr><td>Full Name:</td><td>Carl Cobarrubia</td></tr>
+                <tr><td>Address:</td><td>112 Coquico St. San Antonio, Barangay 53M Yakal, Cavite City, Philippines</td></tr>
+                <tr><td>Date of Birth:</td><td>June 4, 2005</td></tr>
+                <tr><td>Age:</td><td>20</td></tr>
+                <tr><td>Gender:</td><td>Male</td></tr>
+                <tr><td>Nationality:</td><td>Filipino</td></tr>
+                <tr><td>Civil Status:</td><td>Single</td></tr>
+                <tr><td>Languages:</td><td>English, Filipino</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Enthusiastic and dedicated IT professional with strong problem-solving and communication skills. Experienced in web development, teamwork, and delivering quality results under pressure. Passionate about learning new technologies and contributing to innovative projects.</p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Bachelor of Science in Information Technology</strong><br>San Sebastian College Recoletos De Cavite</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <strong>Telemarketing Representative</strong> – Star City (2025)
+                    <ul>
+                        <li>Conducted outbound calls to potential clients to promote company products and services.</li>
+                        <li>Maintained client databases and updated records of interactions and sales.</li>
+                        <li>Achieved monthly sales targets consistently through effective communication and persuasion skills.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <ul>
+                <li>Google IT Support Professional Certificate</li>
+                <li>Responsive Web Design – freeCodeCamp</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carl Ashley Cobarrubia — Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-image: url('file:///C:/Users/202350259/Documents/star.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* LEFT SIDE */
+    .left {
+      width: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .left img {
+      width: 220px;
+      height: 220px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 25px;
+    }
+
+    .left h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .left h3 {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    /* RIGHT SIDE */
+    .right {
+      width: 50%;
+      background: rgba(191, 191, 191, 0.8);
+      padding: 80px 60px;
+      color: #222;
+    }
+
+    .right h2 {
+      font-size: 40px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .right p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    /* MINIMIZED BUTTONS */
+    .right-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .right-buttons a {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+
+      padding: 8px 20px;      /* smaller */
+      font-size: 14px;        /* smaller text */
+      border-radius: 4px;     /* smaller edges */
+
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .right-buttons a:hover {
+      background: #000;
+      transform: scale(1.05);
+    }
+
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Navigation buttons for modal */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .prev { left: 0; }
+    .next { right: 0; }
+
+    .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+    /* Modal for Hobbies */
+    #hobbiesModal .modal-content {
+      background-color: #beb9b9;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #hobbiesModal h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    #hobbiesModal ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    #hobbiesModal li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #hobbiesModal li img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      margin-bottom: 10px;
+    }
+
+    #hobbiesModal li img:hover {
+      transform: scale(1.05);
+    }
+
+    #hobbiesModal li p {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin: 0;
+    }
+
+    #hobbiesModal .close {
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: #000;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+        height: auto;
+      }
+      .left, .right {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .right-buttons { justify-content: center; }
+      #hobbiesModal ul { flex-direction: column; gap: 20px; }
+      #hobbiesModal li img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="left">
+  <img src="file:///C:/Users/202350259/Documents/carl.jpg" alt="Carl Ashley" />
+  <h1>Carl Ashley DM. Cobarrubia</h1>
+  <h3>Student Web Developer</h3>
+  <div class="section" style="margin-top: 10px; text-align:center;">
+    <h2 style="font-size: 20px; margin-bottom: 5px;">Connect With Me</h2>
+    <p style="margin-bottom: 5px;">Feel free to reach out — I’d love to hear from you!</p>
+    <p>
+      <a href="https://www.instagram.com/lazycarlito/" target="_blank">Instagram</a> •
+      <a href="https://www.facebook.com/LazyCarlito/" target="_blank">Facebook</a> •
+      <a href="https://ph.linkedin.com/in/carl-ashley-cobarrubia-1aa65a39a" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</div>
+
+<div class="right">
+
+  <!-- MINIMIZED BUTTONS -->
+  <div class="right-buttons">
+    <a href="file:///C:/Users/202350259/Desktop/re.html">Resume</a>
+    <a href="file:///C:/Users/202350259/Desktop/car.html">Cartoon</a>
+    <a href="#" id="certificatesBtn">Certificates</a>
+    <a href="#" id="hobbiesBtn">Hobbies</a>
+  </div>
+
+  <h2>About Me</h2>
+
+  <p>
+    I am a tech-savvy 3rd-year Information Technology student at San Sebastian College – Recoletos de Cavite.  
+    I am passionate about web development, systems analysis, and continuously improving my skills in HTML, CSS, and JavaScript.  
+    Beyond academics, I am deeply rooted in my faith as an altar server, where I learned discipline, humility, and leadership.
+  </p>
+
+</div>
+
+<!-- Modal for Certificates -->
+<div id="certificatesModal" class="modal">
+  <span class="close" id="closeModal">&times;</span>
+  <button class="prev" id="prevBtn">&#10094;</button>
+  <img class="modal-content" id="modalImage" />
+  <button class="next" id="nextBtn">&#10095;</button>
+</div>
+
+<!-- Modal for Hobbies -->
+<div id="hobbiesModal" class="modal">
+  <span class="close" id="closeHobbiesModal">&times;</span>
+  <div class="modal-content">
+    <h2>My Hobbies</h2>
+    <ul>
+      <li>
+        <img src="file:///C:/Users/202350259/Downloads/ml.jpg" alt="Play Mobile Legends">
+        <p>Play Mobile Legends</p>
+      </li>
+      <li>
+        <img src="file:///C:/Users/202350259/Downloads/sadp.jpg" alt="Serving God">
+        <p>Serving God</p>
+      </li>
+      <li>
+        <img src="file:///C:/Users/202350259/Downloads/cine.jpg" alt="Watching Movies">
+        <p>Watching Movies</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  var certificateImages = [
+    "file:///C:/Users/202350259/Documents/Screenshot%202025-11-23%20162003.png",
+    "file:///C:/Users/202350259/Documents/Screenshot%202025-11-23%20162334.png",
+    "file:///C:/Users/202350259/Documents/Screenshot%202025-11-23%20161643.png"
+  ];
+  var currentIndex = 0;
+  var modal = document.getElementById("certificatesModal");
+  var modalImg = document.getElementById("modalImage");
+  var btn = document.getElementById("certificatesBtn");
+  var span = document.getElementById("closeModal");
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+
+  btn.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = certificateImages[currentIndex];
+  };
+  span.onclick = function() { modal.style.display = "none"; };
+  prevBtn.onclick = function() {
+    currentIndex = (currentIndex === 0) ? certificateImages.length - 1 : currentIndex - 1;
+    modalImg.src = certificateImages[currentIndex];
+  };
+  nextBtn.onclick = function() {
+    currentIndex = (currentIndex === certificateImages.length - 1) ? 0 : currentIndex + 1;
+    modalImg.src = certificateImages[currentIndex];
+  };
+
+  var hobbiesModal = document.getElementById("hobbiesModal");
+  var hobbiesBtn = document.getElementById("hobbiesBtn");
+  var closeHobbiesModal = document.getElementById("closeHobbiesModal");
+
+  hobbiesBtn.onclick = function() { hobbiesModal.style.display = "block"; };
+  closeHobbiesModal.onclick = function() { hobbiesModal.style.display = "none"; };
+
+  window.onclick = function(event) {
+    if (event.target == hobbiesModal) hobbiesModal.style.display = "none";
+    if (event.target == modal) modal.style.display = "none";
+  };
+</script>
+
+</body>
+</html>
